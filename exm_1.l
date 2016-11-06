@@ -321,7 +321,13 @@ then	{size_term=yyleng;
 
 
 
-.	{printf("Unexpected expr simbol in line %d\n",yylineno ); exit(1);}
+.		{size_term=yyleng;
+		stop=start+size_term;
+ 		prom_st=stop-1;
+		if((fl = fopen(fili_name ,"a"))==NULL) {printf ("Error !");}
+		else {fprintf(fl,"Unexpected expr simbol in line (%s,%d,%d,%d)",yytext,num_line,start, prom_st);fclose(fl);}
+		start=stop;
+}
 %%
 
 	void show()
