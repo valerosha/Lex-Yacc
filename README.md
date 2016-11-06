@@ -13,8 +13,8 @@
 Так как теперь возможны два варианта запуска лексера, в последнем (3-м) пункте возможны два варианта запуска.
 <li>1) lex exm_1.l
 <li>2) gcc lex.yy.c -lfl -o lexer
-<li>3.1) ![alt text](https://cloud.githubusercontent.com/assets/13032857/20041060/560a1296-a474-11e6-9aba-189c6fecbce8.PNG)
-<li>3.2)![alt text](https://cloud.githubusercontent.com/assets/13032857/20041061/560b7b36-a474-11e6-8169-b1fdad95b12e.PNG)
+<li>3.1) ![alt text](https://cloud.githubusercontent.com/assets/13032857/20041328/5ee09d5a-a478-11e6-942c-0f06476bcca9.PNG)
+<li>3.2)![alt text](https://cloud.githubusercontent.com/assets/13032857/20041329/5ee557d2-a478-11e6-8e7f-7d7290856c79.PNG)
 
 Реализация:
 Так как консольное приложение для лексера должно выводить лексемы на печать, но печатать должна быть отдельная процедура. Была создана процедура show (), которая выводит результат работы лексера.
