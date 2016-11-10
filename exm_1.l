@@ -217,7 +217,7 @@ then	{size_term=yyleng;
 	}
 
 
-[0-9]+	{size_term=yyleng;
+[0-9]+[ \t]	{size_term=yyleng;
 	stop=start+size_term;
  	prom_st=stop-1;
 	if((fl = fopen(fili_name ,"a"))==NULL) {printf ("Error !");}
@@ -236,7 +236,7 @@ then	{size_term=yyleng;
 	/*return EXPR;*/
 }
 
-[a-zA-Z_$][a-zA-Z_]* 	{size_term=yyleng;
+[ \t][a-zA-Z_$][a-zA-Z_1-9]*[ \t] 	{size_term=yyleng;
 	stop=start+size_term;
  	prom_st=stop-1;
 	if((fl = fopen(fili_name ,"a"))==NULL) {printf ("Error !");}
@@ -313,7 +313,7 @@ then	{size_term=yyleng;
 		  stop=start+size_term;
 		  prom_st=stop-1;
 		  if((fl = fopen(fili_name ,"a"))==NULL) {printf ("Error !");}
-	else {fprintf(fl,"SIMP_COMMENTS (%s,%d,%d,%d)",yytext,num_line,start, prom_st);fclose(fl);}
+	else{fprintf(fl,"SIMP_COMMENTS (%s,%d,%d,%d)",yytext,num_line,start, prom_st);fclose(fl);}
 	       	  start=stop;
 		/*return ENT;*/
 		}
